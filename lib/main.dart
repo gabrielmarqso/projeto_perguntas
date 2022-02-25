@@ -1,8 +1,10 @@
 // ignore_for_file: deprecated_member_use
 
 import 'package:flutter/material.dart';
+import 'package:projeto_perguntas/resultado.dart';
 import './questao.dart';
 import './resposta.dart';
+import 'resultado.dart';
 
 main() => runApp(new PerguntaApp());
 
@@ -49,24 +51,17 @@ class _PerguntaAppState extends State<PerguntaApp> {
 
     return MaterialApp(
       home: Scaffold(
-        appBar: AppBar(
-          title: Text('Perguntas'),
-        ),
-        body: temPerguntaSelecionada
-            ? Column(
-                children: <Widget>[
-                  Questao(_perguntas[_perguntaSelecionada]['texto']),
-                  ...respostas.map((t) => Resposta(t, _responder)).toList(),
-                ],
-              )
-            // ignore: prefer_const_constructors
-            : Center(
-                // ignore: prefer_const_constructors
-                child: Text(
-                  'Parabéns!',
-                ),
-              ),
-      ),
+          appBar: AppBar(
+            title: Text('Perguntas'),
+          ),
+          body: temPerguntaSelecionada
+              ? Column(
+                  children: <Widget>[
+                    Questao(_perguntas[_perguntaSelecionada]['texto']),
+                    ...respostas.map((t) => Resposta(t, _responder)).toList(),
+                  ],
+                )
+              : Resultado()),
     );
   }
 }
