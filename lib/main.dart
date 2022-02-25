@@ -40,9 +40,6 @@ class _PerguntaAppState extends State<PerguntaApp> {
 
   @override
   Widget build(BuildContext context) {
-    List<Widget> widgets =
-        _respostas.map((t) => Resposta(t, _responder)).toList();
-
     // for (var textoResp in respostas) {
     //   respostas.add(Resposta(textoResp, _responder));
     // }
