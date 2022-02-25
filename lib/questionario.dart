@@ -22,6 +22,8 @@ class Questionario extends StatelessWidget {
     List<String> respostas = temPerguntaSelecionada
         ? perguntas[perguntaSelecionada]['respostas']
         : null;
+    List<Widget> widgets =
+        respostas.map((t) => Resposta(t, responder)).toList();
 
     return Column(
       children: <Widget>[
